@@ -91,18 +91,9 @@
             android:textSize="17sp" />
     </RelativeLayout>
 
-            <Button
-                android:id="@+id/btn_weixin_logout"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/weixin" />
+            
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="微信登录注销"
-                android:textColor="#BEBEBE"
-                android:textSize="20sp" />
+            
        
     <RelativeLayout
         android:id="@+id/tuichu"

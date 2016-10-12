@@ -16,12 +16,11 @@ import android.widget.Toast;
 
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
+import com.tencent.mm.sdk.openapi.IWXAPI;
+import com.tencent.mm.sdk.openapi.WXAPIFactory;
 import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.bean.SocializeEntity;
-import com.umeng.socialize.bean.StatusCode;
 import com.umeng.socialize.controller.UMServiceFactory;
 import com.umeng.socialize.controller.UMSocialService;
-import com.umeng.socialize.controller.listener.SocializeListeners.SocializeClientListener;
 import com.umeng.socialize.controller.listener.SocializeListeners.UMAuthListener;
 import com.umeng.socialize.controller.listener.SocializeListeners.UMDataListener;
 import com.umeng.socialize.exception.SocializeException;
@@ -62,7 +61,16 @@ public class LoginActivity extends BaseActivity {
 				addWXPlatform();
 
 	}
+	//判断用户是否安装微信客户端
+	  private boolean isWXAppInstalledAndSupported() {
+	        IWXAPI msgApi = WXAPIFactory.createWXAPI(this, null);
+	        msgApi.registerApp("wxdb59e14854a747c8");
+          
+	        boolean sIsWXAppInstalledAndSupported = msgApi.isWXAppInstalled()
+	                && msgApi.isWXAppSupportAPI();
 
+	        return sIsWXAppInstalledAndSupported;
+	    }
 	
 	// 添加微信、微信朋友圈平台
 	private void addWXPlatform() {
@@ -139,7 +147,13 @@ public class LoginActivity extends BaseActivity {
 			break;
 		// 微信登录
 		case R.id.btn_weixin:
-                 login(SHARE_MEDIA.WEIXIN);			
+			if (isWXAppInstalledAndSupported()==false) {
+				Toast.makeText(LoginActivity.this, "未安装微信客户端，请您先安装",
+						Toast.LENGTH_SHORT).show();
+			}else {
+				  login(SHARE_MEDIA.WEIXIN);	
+			}
+               		
 			break;
 		
       
@@ -181,6 +195,9 @@ public class LoginActivity extends BaseActivity {
 						if (!TextUtils.isEmpty(uid)) {
 							// uid不为空，获取用户信息
 							getUserInfo(platform);
+						
+								Toast.makeText(LoginActivity.this, "登录成功",
+										Toast.LENGTH_SHORT).show();
 							Intent intent=new Intent(LoginActivity.this,MainActivity.class);
 							startActivity(intent);
 							sp.edit().putBoolean("isLogined", true).commit();
@@ -227,7 +244,7 @@ public class LoginActivity extends BaseActivity {
 						// }
 
 						if (info != null) {
-							Toast.makeText(LoginActivity.this, "登录成功",
+							Toast.makeText(LoginActivity.this, info.toString(),
 									Toast.LENGTH_SHORT).show();
 						}
 					}

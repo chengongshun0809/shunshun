@@ -7,7 +7,7 @@
 
     <include layout="@layout/layout_base_title" />
 
-    <ScrollView
+    <zz.itcast.jiujinhui.view.MyScrollView
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -707,7 +707,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="300dp" />
         </LinearLayout>
-    </ScrollView>
+    </zz.itcast.jiujinhui.view.MyScrollView>
 
     <RelativeLayout
         android:id="@+id/rl_tab_container"

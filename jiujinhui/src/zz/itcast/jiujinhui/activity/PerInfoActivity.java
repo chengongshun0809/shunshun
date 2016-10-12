@@ -28,9 +28,7 @@ public class PerInfoActivity extends BaseActivity {
 	private UMSocialService mController = UMServiceFactory
 			.getUMSocialService(Constants.DESCRIPTOR);
 
-	// 注销
-	@ViewInject(R.id.btn_weixin_logout)
-	private Button btn_weixin_logout;
+	
 	@ViewInject(R.id.tuichu)
 	private RelativeLayout tuichu;
 	private SharedPreferences sp;
@@ -59,8 +57,7 @@ public class PerInfoActivity extends BaseActivity {
 		// TODO Auto-generated method stub
 		tuichu.setOnClickListener(this);
 		tv_back.setOnClickListener(this);
-		btn_weixin_logout.setOnClickListener(this);
-
+		
 	}
 
 	@Override
@@ -96,6 +93,7 @@ public class PerInfoActivity extends BaseActivity {
 									}
 									sp.edit().putBoolean("isLogined", false)
 											.commit();
+									
 									finish();
 								}
 							})
@@ -116,41 +114,15 @@ public class PerInfoActivity extends BaseActivity {
 		case R.id.tv_back:
 			finish();
 			break;
-		case R.id.btn_weixin_logout:
-			// 注销微信登录
-			logout(SHARE_MEDIA.WEIXIN);
-			break;
+		
+			
+			
 		default:
 			break;
 		}
 
 	}
 
-	/**
-	 * 注销本次登陆
-	 * 
-	 * @param platform
-	 */
-	private void logout(final SHARE_MEDIA platform) {
-		mController.deleteOauth(PerInfoActivity.this, platform,
-				new SocializeClientListener() {
-
-					@Override
-					public void onStart() {
-
-					}
-
-					@Override
-					public void onComplete(int status, SocializeEntity entity) {
-						String showText = "解除" + platform.toString() + "平台授权成功";
-						if (status != StatusCode.ST_CODE_SUCCESSED) {
-							showText = "解除" + platform.toString() + "平台授权失败["
-									+ status + "]";
-						}
-						Toast.makeText(PerInfoActivity.this, showText,
-								Toast.LENGTH_SHORT).show();
-					}
-				});
-	}
+	
 
 }
