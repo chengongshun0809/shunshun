@@ -25,6 +25,7 @@ public class MyScrollView extends ScrollView {
 	 
 	  public MyScrollView(Context context, AttributeSet attrs) {
 	    super(context, attrs);
+	    
 	    mGestureDetector = new GestureDetector(new YScrollDetector());
 	    canScroll = true;
 	  }
