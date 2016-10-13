@@ -1,32 +1,38 @@
 package zz.itcast.jiujinhui.fragment;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.security.PublicKey;
+
 import zz.itcast.jiujinhui.R;
 import zz.itcast.jiujinhui.activity.DrinkRecordActivity;
-import zz.itcast.jiujinhui.activity.LoginActivity;
-import zz.itcast.jiujinhui.activity.MainActivity;
 import zz.itcast.jiujinhui.activity.MyTiXianActivity;
 import zz.itcast.jiujinhui.activity.PerInfoActivity;
 import zz.itcast.jiujinhui.activity.ReChargeActivity;
 import zz.itcast.jiujinhui.activity.TiXianRecordActivity;
 import zz.itcast.jiujinhui.activity.TradeRecordActivity;
 import zz.itcast.jiujinhui.activity.ZongZiChanActivity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v4.app.Fragment;
-import android.view.KeyEvent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.UrlConnectionDownloader;
 
 public class personFragment extends BaseFragment {
 	@ViewInject(R.id.tv_back)
@@ -48,6 +54,10 @@ public class personFragment extends BaseFragment {
 	@ViewInject(R.id.personInfo)
 	private LinearLayout personInfo;
 
+	// 圆形图片
+	@ViewInject(R.id.circleImabeView)
+	private zz.itcast.jiujinhui.view.CircleImageView circleImabeView;
+
 	private SharedPreferences sp;
 
 	@Override
@@ -56,9 +66,12 @@ public class personFragment extends BaseFragment {
 		ViewUtils.inject(this, view);
 		tv_back.setVisibility(view.GONE);
 		tv__title.setText("个人中心");
-
+/*		动将图像缓存在本地
+		通过图片压缩转换以减少内存消耗
+		自动处理了ImageView的回收，即自动取消不在视野范围内的ImageView视图资源的加载*/
+       Picasso.with(getActivity()).load(Uri.parse("http://wx.qlogo.cn/mmopen/fRVkk32IqicV33q4icsmZgsiaOVOe0yjUDhdgXjnNFglzDkOU0CgVzPVgyZeDZNtCmV6sIPFOowbAvAqtSVE2wpXxddAEjnKPNE/0")).into(circleImabeView);
 	}
-	
+
 	@Override
 	public void initData() {
 		// TODO Auto-generated method stub
@@ -116,51 +129,41 @@ public class personFragment extends BaseFragment {
 			Intent intent5 = new Intent(getActivity(), ReChargeActivity.class);
 			startActivity(intent5);
 			break;
-		case R.id.personInfo://进入个人信息页面
+		case R.id.personInfo:// 进入个人信息页面
 
-			/*Dialog dialog = new AlertDialog.Builder(getActivity())
-					.setTitle("确认退出?")
-					.setNegativeButton("确定",
-							new DialogInterface.OnClickListener() {
+			/*
+			 * Dialog dialog = new AlertDialog.Builder(getActivity())
+			 * .setTitle("确认退出?") .setNegativeButton("确定", new
+			 * DialogInterface.OnClickListener() {
+			 * 
+			 * @Override public void onClick(DialogInterface dialog, int which)
+			 * { // TODO Auto-generated method stub
+			 * sp.edit().putBoolean("isLogined", false) .commit();
+			 * 
+			 * Intent intent6 = new Intent(getActivity(), LoginActivity.class);
+			 * intent6.putExtra("person", "person");
+			 * getActivity().startActivityForResult( intent6, 1);
+			 * 
+			 * } }) .setPositiveButton("取消", new
+			 * DialogInterface.OnClickListener() {
+			 * 
+			 * @Override public void onClick(DialogInterface dialog, int which)
+			 * { // TODO Auto-generated method stub dialog.dismiss(); }
+			 * }).create(); dialog.setCanceledOnTouchOutside(true);
+			 * dialog.show();
+			 */
 
-								@Override
-								public void onClick(DialogInterface dialog,
-										int which) {
-									// TODO Auto-generated method stub
-									sp.edit().putBoolean("isLogined", false)
-											.commit();
-
-									Intent intent6 = new Intent(getActivity(),
-											LoginActivity.class);
-									intent6.putExtra("person", "person");
-									getActivity().startActivityForResult(
-											intent6, 1);
-
-								}
-							})
-					.setPositiveButton("取消",
-							new DialogInterface.OnClickListener() {
-
-								@Override
-								public void onClick(DialogInterface dialog,
-										int which) {
-									// TODO Auto-generated method stub
-									dialog.dismiss();
-								}
-							}).create();
-			dialog.setCanceledOnTouchOutside(true);
-			dialog.show();*/
-			
-			
-			Intent intent=new Intent(getActivity(),PerInfoActivity.class);
+			Intent intent = new Intent(getActivity(), PerInfoActivity.class);
 			intent.putExtra("shun", "shun");
 			startActivityForResult(intent, 0);
-			
+
 			break;
 		default:
 			break;
 		}
 
 	}
+
+
 
 }

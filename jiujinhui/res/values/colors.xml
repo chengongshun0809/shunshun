@@ -10,7 +10,10 @@
     <color name="white">#ffffffff</color>
     <color name="background_tab_pressed">#00000000</color>
     <color name="green_txt">#3366cc</color>
-    <color name="igray">#ffF2F2F2</color><!-- 用于页面背景 -->
-         
-         
+    <color name="igray">#ffF2F2F2</color>
+ <!-- 用于页面背景 -->
+
+    <color name="dark">#FF222222</color>
+    <color name="light">#FFEEEEEE</color>
+
 </resources>

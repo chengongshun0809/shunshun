@@ -17,6 +17,33 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
+        public static final int border_color=0x7f010010;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int border_overlay=0x7f010011;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int border_width=0x7f01000f;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
         public static final int pstsDividerColor=0x7f010002;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
@@ -149,11 +176,15 @@ containing a value of this type.
     public static final class color {
         public static final int background_tab_pressed=0x7f040007;
         public static final int black=0x7f040005;
+        /**  用于页面背景 
+         */
+        public static final int dark=0x7f04000a;
         public static final int green_txt=0x7f040008;
         public static final int igray=0x7f040009;
+        public static final int light=0x7f04000b;
         public static final int tab_checked_bg=0x7f040000;
         public static final int tab_checked_color=0x7f040002;
-        public static final int tab_text_color=0x7f04000a;
+        public static final int tab_text_color=0x7f04000c;
         public static final int tab_unchecked_color=0x7f040003;
         public static final int text_white=0x7f040004;
         public static final int transparent=0x7f040001;
@@ -168,6 +199,7 @@ containing a value of this type.
          */
         public static final int activity_horizontal_margin=0x7f050000;
         public static final int activity_vertical_margin=0x7f050001;
+        public static final int base_padding=0x7f05000d;
         public static final int big_text_size=0x7f05000c;
         public static final int huge_text_size=0x7f05000b;
         public static final int large_text_size=0x7f050008;
@@ -207,92 +239,89 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020017;
         public static final int jiaoyifuwu=0x7f020018;
         public static final int jiujinhui=0x7f020019;
-        public static final int nologin_fragment_buttonstyle=0x7f02001a;
-        public static final int ok=0x7f02001b;
-        public static final int orange_button=0x7f02001c;
-        public static final int phone=0x7f02001d;
-        public static final int pic_btn_orange=0x7f02001e;
-        public static final int pic_btn_orange_on=0x7f02001f;
-        public static final int pic_btn_white=0x7f020020;
-        public static final int pic_btn_white_on=0x7f020021;
-        public static final int point_bg=0x7f020022;
-        public static final int point_normal=0x7f020023;
-        public static final int point_selected=0x7f020024;
-        public static final int qr=0x7f020025;
-        public static final int shape_corners=0x7f020026;
-        public static final int tab_help_bg=0x7f020027;
-        public static final int tab_personal_bg=0x7f020028;
-        public static final int tab_trade_bg=0x7f020029;
-        public static final int tb_icon_actionbar_back=0x7f02002a;
-        public static final int umeng_socialize_wechat=0x7f02002b;
-        public static final int umeng_socialize_wechat_gray=0x7f02002c;
-        public static final int umeng_socialize_wxcircle=0x7f02002d;
-        public static final int umeng_socialize_wxcircle_gray=0x7f02002e;
-        public static final int weixin=0x7f02002f;
-        public static final int white_button=0x7f020030;
-        public static final int yellow=0x7f020031;
-        public static final int zhi=0x7f020032;
+        public static final int login=0x7f02001a;
+        public static final int nologin_fragment_buttonstyle=0x7f02001b;
+        public static final int ok=0x7f02001c;
+        public static final int orange_button=0x7f02001d;
+        public static final int phone=0x7f02001e;
+        public static final int pic_btn_orange=0x7f02001f;
+        public static final int pic_btn_orange_on=0x7f020020;
+        public static final int pic_btn_white=0x7f020021;
+        public static final int pic_btn_white_on=0x7f020022;
+        public static final int point_bg=0x7f020023;
+        public static final int point_normal=0x7f020024;
+        public static final int point_selected=0x7f020025;
+        public static final int qr=0x7f020026;
+        public static final int shape_corners=0x7f020027;
+        public static final int tab_help_bg=0x7f020028;
+        public static final int tab_personal_bg=0x7f020029;
+        public static final int tab_trade_bg=0x7f02002a;
+        public static final int tb_icon_actionbar_back=0x7f02002b;
+        public static final int umeng_socialize_wechat=0x7f02002c;
+        public static final int umeng_socialize_wechat_gray=0x7f02002d;
+        public static final int umeng_socialize_wxcircle=0x7f02002e;
+        public static final int umeng_socialize_wxcircle_gray=0x7f02002f;
+        public static final int weixin=0x7f020030;
+        public static final int white_button=0x7f020031;
+        public static final int yellow=0x7f020032;
+        public static final int zhi=0x7f020033;
     }
     public static final class id {
-        public static final int LongTan=0x7f090020;
-        public static final int NickName=0x7f090015;
-        public static final int action_settings=0x7f09003a;
-        public static final int bt_getcode_id=0x7f090011;
-        public static final int btn_know_detail=0x7f09001f;
-        public static final int btn_login=0x7f090006;
-        public static final int btn_nologin_fragment=0x7f09002d;
-        public static final int btn_regiest=0x7f090005;
-        public static final int btn_weixin=0x7f090007;
-        public static final int buy_sale_pager=0x7f090027;
-        public static final int check=0x7f090036;
-        public static final int checkRember=0x7f090002;
-        public static final int checklogin=0x7f090003;
-        public static final int chongzhi=0x7f090035;
-        public static final int compMod=0x7f090012;
-        public static final int drink_record=0x7f09001b;
-        public static final int et_register_code_id=0x7f090010;
-        public static final int et_register_username_id=0x7f090001;
-        public static final int fl=0x7f090008;
-        public static final int forget=0x7f090004;
-        public static final int hscrollview=0x7f090022;
-        public static final int iv_drink_checked=0x7f090030;
-        public static final int iv_hf=0x7f090019;
-        public static final int ll_head_title=0x7f090028;
+        public static final int LongTan=0x7f09001b;
+        public static final int NickName=0x7f090010;
+        public static final int action_settings=0x7f090036;
+        public static final int bt_getcode_id=0x7f09000b;
+        public static final int btn_know_detail=0x7f09001a;
+        public static final int btn_nologin_fragment=0x7f090028;
+        public static final int btn_weixin=0x7f090001;
+        public static final int buy_sale_pager=0x7f090022;
+        public static final int check=0x7f090032;
+        public static final int chongzhi=0x7f090031;
+        public static final int circleImabeView=0x7f09000f;
+        public static final int compMod=0x7f09000c;
+        public static final int drink_record=0x7f090016;
+        public static final int et_register_code_id=0x7f09000a;
+        public static final int et_register_username_id=0x7f090029;
+        public static final int fl=0x7f090002;
+        public static final int hscrollview=0x7f09001d;
+        public static final int iv_drink_checked=0x7f09002c;
+        public static final int iv_hf=0x7f090014;
+        public static final int ll_head_title=0x7f090023;
         public static final int ll_person=0x7f090000;
-        public static final int ll_scroll=0x7f090023;
-        public static final int pager=0x7f090039;
-        public static final int paytype_of_weixin=0x7f090031;
-        public static final int paytype_of_weixin_ck=0x7f090032;
-        public static final int paytype_of_zhifubao=0x7f090033;
-        public static final int paytype_of_zhifubao_ck=0x7f090034;
-        public static final int personInfo=0x7f090014;
-        public static final int pic_item=0x7f09002f;
-        public static final int radiogroup=0x7f09000a;
-        public static final int rb_help=0x7f09000d;
-        public static final int rb_income=0x7f09000e;
-        public static final int rb_person=0x7f09000c;
-        public static final int rb_trade=0x7f09000b;
-        public static final int rb_zhichu=0x7f09000f;
-        public static final int recharge=0x7f090017;
-        public static final int rengou=0x7f090021;
-        public static final int rl_tab_container=0x7f090009;
-        public static final int tabs=0x7f090024;
-        public static final int tabs_buysale=0x7f090026;
-        public static final int tixian=0x7f090016;
-        public static final int tixianRecord=0x7f09001d;
-        public static final int trade_pager=0x7f090025;
-        public static final int trade_record=0x7f09001c;
-        public static final int tuichu=0x7f09002e;
-        public static final int tv__title=0x7f09002a;
-        public static final int tv_back=0x7f090029;
-        public static final int tv_hf=0x7f09001a;
-        public static final int tv_home=0x7f090013;
-        public static final int tv_title_right=0x7f09002b;
-        public static final int user_protocol=0x7f090037;
-        public static final int viewPager_menu=0x7f09001e;
-        public static final int woyaotixian=0x7f09002c;
-        public static final int zhuce=0x7f090038;
-        public static final int zongzichan=0x7f090018;
+        public static final int ll_scroll=0x7f09001e;
+        public static final int pager=0x7f090035;
+        public static final int paytype_of_weixin=0x7f09002d;
+        public static final int paytype_of_weixin_ck=0x7f09002e;
+        public static final int paytype_of_zhifubao=0x7f09002f;
+        public static final int paytype_of_zhifubao_ck=0x7f090030;
+        public static final int personInfo=0x7f09000e;
+        public static final int pic_item=0x7f09002b;
+        public static final int radiogroup=0x7f090004;
+        public static final int rb_help=0x7f090007;
+        public static final int rb_income=0x7f090008;
+        public static final int rb_person=0x7f090006;
+        public static final int rb_trade=0x7f090005;
+        public static final int rb_zhichu=0x7f090009;
+        public static final int recharge=0x7f090012;
+        public static final int rengou=0x7f09001c;
+        public static final int rl_tab_container=0x7f090003;
+        public static final int tabs=0x7f09001f;
+        public static final int tabs_buysale=0x7f090021;
+        public static final int tixian=0x7f090011;
+        public static final int tixianRecord=0x7f090018;
+        public static final int trade_pager=0x7f090020;
+        public static final int trade_record=0x7f090017;
+        public static final int tuichu=0x7f09002a;
+        public static final int tv__title=0x7f090025;
+        public static final int tv_back=0x7f090024;
+        public static final int tv_hf=0x7f090015;
+        public static final int tv_home=0x7f09000d;
+        public static final int tv_title_right=0x7f090026;
+        public static final int user_protocol=0x7f090033;
+        public static final int viewPager_menu=0x7f090019;
+        public static final int woyaotixian=0x7f090027;
+        public static final int zhuce=0x7f090034;
+        public static final int zongzichan=0x7f090013;
     }
     public static final class layout {
         public static final int activity_login=0x7f030000;
@@ -372,6 +401,68 @@ containing a value of this type.
         public static final int trade_tab_style=0x7f070004;
     }
     public static final class styleable {
+        /** Attributes that can be used with a CircleImageView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CircleImageView_border_color zz.itcast.jiujinhui:border_color}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircleImageView_border_overlay zz.itcast.jiujinhui:border_overlay}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircleImageView_border_width zz.itcast.jiujinhui:border_width}</code></td><td></td></tr>
+           </table>
+           @see #CircleImageView_border_color
+           @see #CircleImageView_border_overlay
+           @see #CircleImageView_border_width
+         */
+        public static final int[] CircleImageView = {
+            0x7f01000f, 0x7f010010, 0x7f010011
+        };
+        /**
+          <p>This symbol is the offset where the {@link zz.itcast.jiujinhui.R.attr#border_color}
+          attribute's value can be found in the {@link #CircleImageView} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:border_color
+        */
+        public static final int CircleImageView_border_color = 1;
+        /**
+          <p>This symbol is the offset where the {@link zz.itcast.jiujinhui.R.attr#border_overlay}
+          attribute's value can be found in the {@link #CircleImageView} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:border_overlay
+        */
+        public static final int CircleImageView_border_overlay = 2;
+        /**
+          <p>This symbol is the offset where the {@link zz.itcast.jiujinhui.R.attr#border_width}
+          attribute's value can be found in the {@link #CircleImageView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:border_width
+        */
+        public static final int CircleImageView_border_width = 0;
         /** Attributes that can be used with a PagerSlidingTabStrip.
            <p>Includes the following attributes:</p>
            <table>

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -36,17 +37,13 @@ public class LoginActivity extends BaseActivity {
 	
 	@ViewInject(R.id.tv__title)
 	private TextView tv__title;
-	@ViewInject(R.id.btn_regiest)
-	private Button btn_regiest;
-	@ViewInject(R.id.btn_login)
-	private Button btn_login;
+	
 	@ViewInject(R.id.btn_weixin)
 	private Button btn_weixin;
 	
 	
 	
-	@ViewInject(R.id.forget)
-	private TextView forget;
+	
 	@ViewInject(R.id.tv_back)
 	private ImageView tv_back;
 	private boolean isLogined;// �Ƿ��Ѿ���¼
@@ -111,9 +108,7 @@ public class LoginActivity extends BaseActivity {
 	@Override
 	public void initListener() {
 		// TODO Auto-generated method stub
-		btn_login.setOnClickListener(this);
-		btn_regiest.setOnClickListener(this);
-		forget.setOnClickListener(this);
+		
 		tv_back.setOnClickListener(this);
 		btn_weixin.setOnClickListener(this);
 		
@@ -123,11 +118,11 @@ public class LoginActivity extends BaseActivity {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-		case R.id.btn_regiest:// ע��
+		/*case R.id.btn_regiest:// ע��
 			Intent intent1 = new Intent(this, RegisterActivity.class);
 			startActivity(intent1);
-			break;
-		case R.id.btn_login:// �
+			break;*/
+		/*case R.id.btn_login:// �
 
 			if ("happy".equals(ishappy)) {
 				setResult(200);
@@ -135,11 +130,11 @@ public class LoginActivity extends BaseActivity {
 
 			sp.edit().putBoolean("isLogined", true).commit();
 			finish();
-			break;
-		case R.id.forget:// �������
+			break;*/
+		/*case R.id.forget:// �������
 			Intent intent3 = new Intent(this, ForgetPwdActivity.class);
 			startActivity(intent3);
-			break;
+			break;*/
 		case R.id.tv_back:
 
 			finish();
@@ -214,6 +209,7 @@ public class LoginActivity extends BaseActivity {
 					public void onCancel(SHARE_MEDIA platform) {
 						Toast.makeText(LoginActivity.this, "授权取消",
 								Toast.LENGTH_SHORT).show();
+						
 					}
 				});
 		
@@ -246,6 +242,7 @@ public class LoginActivity extends BaseActivity {
 						if (info != null) {
 							Toast.makeText(LoginActivity.this, info.toString(),
 									Toast.LENGTH_SHORT).show();
+							Log.d("ss", info.toString());
 						}
 					}
 				});
