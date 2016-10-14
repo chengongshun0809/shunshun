@@ -726,7 +726,7 @@
             android:weightSum="4" >
 
             <RadioButton
-                android:id="@+id/rb_trade"
+                android:id="@+id/rb_buy_service"
                 style="@style/tab_style"
                 android:layout_height="match_parent"
                 android:drawableTop="@drawable/bar_home_normal"
@@ -734,7 +734,7 @@
                 android:textSize="11sp" />
 
             <RadioButton
-                android:id="@+id/rb_person"
+                android:id="@+id/rb_sale_service"
                 style="@style/tab_style"
                 android:layout_height="match_parent"
                 android:drawableTop="@drawable/bar_home_normal"
@@ -742,14 +742,14 @@
                 android:textSize="11sp" />
 
             <RadioButton
-                android:id="@+id/rb_help"
+                android:id="@+id/rb_tihuo_service"
                 style="@style/tab_style"
                 android:layout_height="match_parent"
                 android:drawableTop="@drawable/bar_home_normal"
                 android:text="提货"
                 android:textSize="11sp" />
              <RadioButton
-                android:id="@+id/rb_help"
+                android:id="@+id/rb_zhuanrang_service"
                 style="@style/tab_style"
                 android:layout_height="match_parent"
                 android:drawableTop="@drawable/bar_home_normal"
