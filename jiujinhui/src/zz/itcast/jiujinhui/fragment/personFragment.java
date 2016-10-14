@@ -9,19 +9,24 @@ import java.security.PublicKey;
 
 import zz.itcast.jiujinhui.R;
 import zz.itcast.jiujinhui.activity.DrinkRecordActivity;
+import zz.itcast.jiujinhui.activity.LoginActivity;
 import zz.itcast.jiujinhui.activity.MyTiXianActivity;
 import zz.itcast.jiujinhui.activity.PerInfoActivity;
 import zz.itcast.jiujinhui.activity.ReChargeActivity;
 import zz.itcast.jiujinhui.activity.TiXianRecordActivity;
 import zz.itcast.jiujinhui.activity.TradeRecordActivity;
 import zz.itcast.jiujinhui.activity.ZongZiChanActivity;
+import zz.itcast.jiujinhui.bean.UserBean;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -53,29 +58,36 @@ public class personFragment extends BaseFragment {
 	private Button recharge;
 	@ViewInject(R.id.personInfo)
 	private LinearLayout personInfo;
+	@ViewInject(R.id.NickName)
+	private TextView NickName;
 
 	// 圆形图片
 	@ViewInject(R.id.circleImabeView)
 	private zz.itcast.jiujinhui.view.CircleImageView circleImabeView;
 
 	private SharedPreferences sp;
-
+	
 	@Override
 	public void initView(View view) {
 		// TODO Auto-generated method stub
 		ViewUtils.inject(this, view);
 		tv_back.setVisibility(view.GONE);
 		tv__title.setText("个人中心");
-/*		动将图像缓存在本地
-		通过图片压缩转换以减少内存消耗
-		自动处理了ImageView的回收，即自动取消不在视野范围内的ImageView视图资源的加载*/
-       Picasso.with(getActivity()).load(Uri.parse("http://wx.qlogo.cn/mmopen/fRVkk32IqicV33q4icsmZgsiaOVOe0yjUDhdgXjnNFglzDkOU0CgVzPVgyZeDZNtCmV6sIPFOowbAvAqtSVE2wpXxddAEjnKPNE/0")).into(circleImabeView);
+		//微信头像
+		sp = getActivity().getSharedPreferences("user", 0);
+        String headimgurl = sp.getString("headimg", null);
+		Picasso.with(getActivity())
+				.load(headimgurl)
+				.into(circleImabeView);
+        //微信昵称
+               	String nickNameString=sp.getString("nickname", null);	
+		           NickName.setText(nickNameString);
 	}
+	
 
 	@Override
 	public void initData() {
 		// TODO Auto-generated method stub
-		sp = getActivity().getSharedPreferences("user", 0);
 		
 	}
 
@@ -163,7 +175,5 @@ public class personFragment extends BaseFragment {
 		}
 
 	}
-
-
 
 }

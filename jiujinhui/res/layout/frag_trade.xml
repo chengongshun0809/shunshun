@@ -6,7 +6,7 @@
 
     <include layout="@layout/layout_base_title" />
 
-    <ScrollView
+    <zz.itcast.jiujinhui.view.MyScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" >
 
@@ -289,6 +289,6 @@
                 android:layout_height="150dp"
                 android:src="@drawable/qr" />
         </LinearLayout>
-    </ScrollView>
+    </zz.itcast.jiujinhui.view.MyScrollView>
 
 </LinearLayout>

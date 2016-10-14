@@ -42,9 +42,9 @@ public class TradeFragment extends BaseFragment {
 		tv_back.setVisibility(view.GONE);
 		tv__title.setText("天天涨钱");
 		// 设置播放方式为来回播放
-		viewPager.setPlayType(0);
+		viewPager.setPlayType(1);
 		// 设置播放间隔时间
-		viewPager.setSleepTime(3000);
+		viewPager.setSleepTime(4000);
 		initViewPager();
 
 	}

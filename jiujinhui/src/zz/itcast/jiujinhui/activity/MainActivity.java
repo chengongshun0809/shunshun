@@ -14,7 +14,10 @@ import zz.itcast.jiujinhui.res.ToastUtil;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -65,6 +68,7 @@ public class MainActivity extends BaseActivity {
 		ViewUtils.inject(this);
 		fm = getSupportFragmentManager();
 		
+		
 	}
 
 	private SharedPreferences sp;
@@ -83,6 +87,9 @@ public class MainActivity extends BaseActivity {
 					break;
 				case R.id.rb_person:
 					currentItem = 1;// ��������
+					
+					
+					
 					break;
 				case R.id.rb_help:
 					currentItem = 2;// ��������
@@ -135,6 +142,7 @@ public class MainActivity extends BaseActivity {
 	private boolean isSecondBackPressed;
 	private long secondTime;
 	private long firstTime;
+	
 
 	/**
 	 * 点击两次返回键退出应用
