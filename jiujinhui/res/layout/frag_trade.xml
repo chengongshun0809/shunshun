@@ -19,10 +19,7 @@
                 android:id="@+id/viewPager_menu"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="#00000000"
-
-                 />
-
+                android:background="#00000000" />
 
             <View
                 android:layout_width="fill_parent"
@@ -71,17 +68,20 @@
                         android:text="收储服务费"
                         android:textSize="20sp" />
 
-                    <Button
-               android:id="@+id/btn_know_detail"
-               android:layout_width="100dp"
-               android:layout_height="30dp"
-               android:layout_marginLeft="21dp"
-               android:layout_marginTop="10dp"
-               android:background="@drawable/nologin_fragment_buttonstyle"
-               android:text="了解详情"
-               
-               
-               android:textColor="#ffffff" />
+                    <RelativeLayout
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="21dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/detile_shape_corners" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="了解详情"
+                            android:textColor="#cc0000" />
+                    </RelativeLayout>
                 </LinearLayout>
 
                 <View
@@ -140,7 +140,7 @@
                 android:layout_marginLeft="18dp"
                 android:layout_marginRight="18dp"
                 android:layout_marginTop="10dp"
-                android:background="#ff9900" >
+                android:background="@drawable/btn_shape_corners" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -198,17 +198,20 @@
                         android:text="收储服务费"
                         android:textSize="20sp" />
 
-                    <Button
-               android:id="@+id/btn_know_detail"
-               android:layout_width="100dp"
-               android:layout_height="30dp"
-               android:layout_marginLeft="21dp"
-               android:layout_marginTop="10dp"
-               android:background="@drawable/nologin_fragment_buttonstyle"
-               android:text="了解详情"
-               
-               
-               android:textColor="#ffffff" />
+                 <RelativeLayout
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="21dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/detile_shape_corners" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="了解详情"
+                            android:textColor="#cc0000" />
+                    </RelativeLayout>
                 </LinearLayout>
 
                 <View
@@ -267,7 +270,7 @@
                 android:layout_marginLeft="18dp"
                 android:layout_marginRight="18dp"
                 android:layout_marginTop="10dp"
-                android:background="#ff9900" >
+                android:background="@drawable/btn_shape_corners" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -283,7 +286,7 @@
                 android:layout_height="10dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/igray" />
-            
+
             <ImageView
                 android:layout_width="fill_parent"
                 android:layout_height="150dp"

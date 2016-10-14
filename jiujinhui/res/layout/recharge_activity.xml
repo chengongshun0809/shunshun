@@ -55,6 +55,7 @@
         android:orientation="horizontal" >
 
         <RelativeLayout
+            android:id="@+id/wubai"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_margin="6dp"
@@ -69,7 +70,7 @@
                 android:textColor="#6699ff" />
 
             <ImageView
-                android:id="@+id/iv_drink_checked"
+                android:id="@+id/iv_drink_checked_wubai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -81,6 +82,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+             android:id="@+id/yiqian"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_margin="6dp"
@@ -95,7 +97,7 @@
                 android:textColor="#6699ff" />
 
             <ImageView
-                android:id="@+id/iv_drink_checked"
+                android:id="@+id/iv_drink_checked_yiqian"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -107,6 +109,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+             android:id="@+id/liangqian"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_margin="6dp"
@@ -121,7 +124,7 @@
                 android:textColor="#6699ff" />
 
             <ImageView
-                android:id="@+id/iv_drink_checked"
+                android:id="@+id/iv_drink_checked_liangqian"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -139,6 +142,7 @@
         android:orientation="horizontal" >
 
         <RelativeLayout
+             android:id="@+id/wuqian"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_margin="6dp"
@@ -153,7 +157,7 @@
                 android:textColor="#6699ff" />
 
             <ImageView
-                android:id="@+id/iv_drink_checked"
+                android:id="@+id/iv_drink_checked_wuqian"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -165,6 +169,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+             android:id="@+id/yiwan"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_margin="6dp"
@@ -179,7 +184,7 @@
                 android:textColor="#6699ff" />
 
             <ImageView
-                android:id="@+id/iv_drink_checked"
+                android:id="@+id/iv_drink_checked_yiwan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -191,6 +196,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+             android:id="@+id/sanwan"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_margin="6dp"
@@ -205,14 +211,16 @@
                 android:textColor="#6699ff" />
 
             <ImageView
-                android:id="@+id/iv_drink_checked"
+                android:id="@+id/iv_drink_checked_sanwan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginBottom="10dp"
-                android:layout_marginRight="10dp"
-                android:src="@drawable/ok" />
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/ok" 
+                android:visibility="gone"
+                />
         </RelativeLayout>
     </LinearLayout>
 
@@ -285,40 +293,35 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/igray" />
-
-        <LinearLayout
-            android:id="@+id/paytype_of_zhifubao"
+<LinearLayout 
+           android:id="@+id/paytype_of_zhifubao"  
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="10dp" >
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/zhi" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:text="支付宝"
-                android:textSize="20sp" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-            <CheckBox
-                android:id="@+id/paytype_of_zhifubao_ck"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:focusable="false" />
-        </LinearLayout>
-
+           android:layout_height="wrap_content"
+           android:padding="10dp"
+           android:orientation="horizontal"
+           android:gravity="center_vertical"
+           >
+           <ImageView android:layout_width="30dp"
+               android:layout_height="30dp"
+               android:src="@drawable/zhi"/>
+           <TextView android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="支付宝"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"
+               android:textSize="20sp"
+               />
+           <View android:layout_width="0dp"
+              
+               android:layout_height="match_parent"
+               android:layout_weight="1"/>
+           <CheckBox 
+               android:id="@+id/paytype_of_zhifubao_ck"  
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:focusable="false"
+               />
+       </LinearLayout>
         <View
             android:layout_width="fill_parent"
             android:layout_height="1dp"
@@ -331,7 +334,7 @@
             android:layout_marginLeft="18dp"
             android:layout_marginRight="18dp"
             android:layout_marginTop="10dp"
-            android:background="#FF0033" >
+            android:background="@drawable/btn_recharge_shape_corners" >
 
             <TextView
                 android:layout_width="wrap_content"
