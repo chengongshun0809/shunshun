@@ -288,10 +288,34 @@ public class TradeServiceActivity extends BaseActivity {
 		diaog_cancel = (Button) view.findViewById(R.id.dialog_cancel);
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setView(view);
-		builder.setCancelable(true);
-		builder.create().show();
-		Dialog dialog = builder.create();
-
+		builder.setCancelable(false);
+		dialog2 = builder.show();
+		
+	      
+		
+		
+       //取消按钮
+		diaog_cancel.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				dialog2.dismiss();
+				count_buy=1;
+			}
+		});
+		//确定按钮
+		dialog_ok.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		
+		
 		product_ordsubmit_count_add.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -359,6 +383,10 @@ public class TradeServiceActivity extends BaseActivity {
 
 		}
 	};
+	
+	private AlertDialog dialog;
+	private Dialog dialog2;
+	
 
 
 }
