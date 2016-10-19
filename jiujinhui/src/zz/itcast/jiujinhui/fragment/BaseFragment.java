@@ -1,5 +1,6 @@
 package zz.itcast.jiujinhui.fragment;
 
+import zz.itcast.jiujinhui.res.Tools;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -31,7 +32,9 @@ public abstract class BaseFragment extends Fragment implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-
+		if (Tools .isFastDoubleClick()) {
+	        return;
+	    }
 	}
 
 }

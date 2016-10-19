@@ -1,7 +1,9 @@
 package zz.itcast.jiujinhui.activity;
 
+import zz.itcast.jiujinhui.res.Tools;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.View;
 import android.view.View.OnClickListener;
 
 public abstract class BaseActivity extends FragmentActivity implements OnClickListener {
@@ -19,22 +21,30 @@ public abstract class BaseActivity extends FragmentActivity implements OnClickLi
 		
 		
 	}
-  //»ñÈ¡µ±Ç°²¼¾Öid
+  //ï¿½ï¿½È¡ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½id
 	public abstract int getLayoutResID() ;
 		
 
-//³õÊ¼»¯Êý¾Ý
+//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½
 	public abstract void initData(); 
 	
-//³õÊ¼»¯¼àÌý£¬ÎªListView£¬GridViewµÈÉèÖÃÊÊÅäÆ÷
+//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªListViewï¿½ï¿½GridViewï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public abstract void initListener();
 		
-   //³õÊ¼»¯ÊÓÍ¼view
+   //ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Í¼view
 	public abstract void initView();
 		   
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		 if (Tools .isFastDoubleClick()) {
+		        return;
+		    }
+		
+		
+	}
 	
-	
-
+	 
 	
 
 }

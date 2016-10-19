@@ -24,9 +24,7 @@ import com.umeng.socialize.controller.listener.SocializeListeners.SocializeClien
 
 public class PerInfoActivity extends BaseActivity {
 
-	// 整个平台的Controller,负责管理整个SDK的配置、操作等处理
-	private UMSocialService mController = UMServiceFactory
-			.getUMSocialService(Constants.DESCRIPTOR);
+
 
 	
 	@ViewInject(R.id.tuichu)
